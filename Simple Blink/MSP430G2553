@@ -1,0 +1,22 @@
+#include <msp430.h>
+
+// Name Port 1.0 as an LED
+#define LED BIT0
+
+int main(void)
+{
+  // Stop Watchdog Timer
+  WDTCTL = WDTPW + WDTHOLD;
+
+  // Set LED port (1.0) as an output
+  P1DIR |= LED;
+  // Initial output is 0
+  P1OUT &= ~LED;
+
+  for(;;){
+      // XOR LED to switch states when the for loop loops
+      P1OUT ^= LED;
+      // Set a delay between blinks
+      _delay_cycles(1000000);
+  }
+}
