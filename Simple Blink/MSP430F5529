@@ -1,0 +1,23 @@
+#include <msp430.h>
+
+// Name Port 4.7 as an LED
+#define LED BIT7
+
+int main(void)
+{
+  // Stop Watchdog Timer
+  WDTCTL = WDTPW + WDTHOLD;
+
+  // Set LED port (4.7) as an output
+  P4DIR |= LED;
+  // Initial output is 0
+  P4OUT &= ~LED;
+
+  // Loop infinitely
+  while(1){
+      // XOR LED to switch states when the for loop loops
+      P4OUT ^= LED;
+      // Set a delay between blinks
+      _delay_cycles(1000000);
+  }
+}
