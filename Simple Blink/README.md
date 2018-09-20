@@ -10,3 +10,9 @@ This function delays the clock cycles for a user-defined amount of time and repe
 
 ### The _delay_cycles() function
 ‘_delay_cycles(x)’ hauls the code and waits for x cycles before resuming.  For example, If the user was running the MSP430 at 1 MHz and wanted a 1 second blink, they would use ‘_delay_cycles(1000000)’.
+
+## MSP430G2553 Specific changes
+The MSP430G2553 has pins 1.0 and 1.6 assigned to the LEDs on the board.  This was reflected in the LED assignment names in the code.
+
+## MSP430F5529 Specific changes
+The MSP430F5529 has pins 1.0 and 4.7 assigned to the LEDs on the board.  This was reflected in the LED assignment names in the code.
