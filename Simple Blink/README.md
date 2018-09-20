@@ -1,4 +1,4 @@
-# Simple blink on a MSP430G2553 and a MSP(FILL IN WHAT BOARD YOU ARE USING)
+# Simple blink on a MSP430G2553 and a MSP430F5529
 
 ## What does this code do?
 This code was designed to make an LED blink for a defined interval of time.  
