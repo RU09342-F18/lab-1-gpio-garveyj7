@@ -1,0 +1,43 @@
+#include <msp430.h>
+
+// Assign names to the respective LEDs on the board
+#define LED0 BIT0
+#define LED1 BIT7
+
+// Set delay time here
+//               ↓
+#define LED0Time 10000
+#define LED1Time 50000
+
+void main(void){
+    // Counters for tracking time
+    unsigned int LED0Counter, LED1Counter;
+    // Stop watchdog timer
+    WDTCTL = WDTPW + WDTHOLD;
+    // Set LED on port 1.0 as an output
+    P1DIR |= LED0;
+    // Set LED on port 4.7 as an output
+    P4DIR |= LED1;
+    // Initialize counters at 0
+    LED0Counter = 0;
+    LED1Counter = 0;
+
+    // Loop infinitely
+    for(;;){
+        // Increment the timers on every cycle
+        LED0Counter++;
+        LED1Counter++;
+
+        // Check first LED counter, if equal to time, then trigger LED
+        if (LED0Counter > LED0Time){
+            LED0Counter = 0;
+            P1OUT ^= LED0;
+        }
+
+        // Check second LED counter, if equal to time, then trigger LED
+        if (LED1Counter > LED1Time){
+            LED1Counter = 0;
+            P4OUT ^= LED1;
+        }
+    }
+}
