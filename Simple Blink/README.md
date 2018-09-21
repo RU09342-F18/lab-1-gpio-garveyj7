@@ -9,7 +9,7 @@ In order to accomplish this task, the pin that controls the LED had to be define
 This function delays the clock cycles for a user-defined amount of time and repeats indefinitely (as there are no conditions in the for loop).  In order to switch the LED on and off, the loop XOR’s the output status of LED, switching it on and off after every loop is completed.
 
 ### The _delay_cycles() function
-‘_delay_cycles(x)’ hauls the code and waits for x cycles before resuming.  For example, If the user was running the MSP430 at 1 MHz and wanted a 1 second blink, they would use ‘_delay_cycles(1000000)’.
+‘_delay_cycles(x)’ haults the code and waits for x cycles before resuming.  For example, If the user was running the MSP430 at 1 MHz and wanted a 1 second blink, they would use ‘_delay_cycles(1000000)’.
 
 ## MSP430G2553 Specific changes
 The MSP430G2553 has pins 1.0 and 1.6 assigned to the LEDs on the board.  This was reflected in the LED assignment names in the code.
