@@ -1,0 +1,31 @@
+#include <msp430.h>
+
+// Name Port 2.1 as a button
+#define BUTTON BIT1
+// Name Port 1.0 as an LED
+#define LED BIT0
+
+int main(void){
+    // Stop Watchdog Timer
+    WDTCTL = WDTPW + WDTHOLD;
+    // Set LED (Port 1.0) as output
+    P1DIR |= LED;
+    // Declare button (Port 2.1) as an input
+    P2DIR &= ~BUTTON;
+    // Declare pull up resistor on the button
+    P2OUT |= BUTTON;
+    // Enable pull up resistor on the button
+    P2REN |= BUTTON;
+    // Set the initial LED output as 0
+    P1OUT &= ~LED;
+
+    // Loop infinitely
+    for(;;) {
+        // While the button is pressed, turn on the LED
+        while ((P2IN & BUTTON) != BUTTON) {
+            P1OUT |= LED;
+        }
+        // Else, LED is off
+        P1OUT &= ~LED;
+    }
+}
