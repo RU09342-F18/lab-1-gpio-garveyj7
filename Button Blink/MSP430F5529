@@ -1,3 +1,11 @@
+/*
+ * MSP430F5529_ButtonBlink.c
+ *
+ *  Created on: Sep 17, 2018
+ * 	Last Edited: Sept 20, 2018
+ *      Author: John Garvey
+ */
+
 #include <msp430.h>
 
 // Name Port 2.1 as a button
