@@ -1,3 +1,11 @@
+/*
+ * MSP430G2553_SimpleBlink.c
+ *
+ *  Created on: Sep 14, 2018
+ * 	Last Edited: Sept 20, 2018
+ *      Author: John Garvey
+ */
+ 
 #include <msp430.h>
 
 // Name Port 1.0 as an LED
