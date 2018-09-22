@@ -1,3 +1,11 @@
+/*
+ * MSP430G2553_OffBoardBlink.c
+ *
+ *  Created on: Sep 19, 2018
+ * 	Last Edited: Sept 21, 2018
+ *      Author: John Garvey
+ */
+ 
 #include <msp430.h>
 // Include the standard library, this is used for the rand() function
 #include <stdlib.h>
